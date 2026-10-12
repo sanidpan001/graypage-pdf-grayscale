@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrayPage — Convert PDF to Grayscale Online Free: Black & White PDF Maker</title>
+<meta name="description" content="Free PDF grayscale converter. Turn colour PDFs into clean black-and-white documents that print cheaply and read clearly, with a contrast boost and size comparison.">
+<link rel="canonical" href="https://graypage.fixoraa.tech/">
+<meta property="og:title" content="GrayPage — Convert PDF to Grayscale Online Free: Black & White PDF Maker">
+<meta property="og:description" content="Free PDF grayscale converter. Turn colour PDFs into clean black-and-white documents that print cheaply and read clearly, with a contrast boost and size comparison.">
+<meta property="og:url" content="https://graypage.fixoraa.tech/">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<script>pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';</script>
+<style>
+:root{--pri:#374151;--acc:#F97316;--bgc:#F9FAFB}
+body{background:var(--bgc);font-family:'Segoe UI',system-ui,sans-serif}
+.pri{background:var(--pri)} .prit{color:var(--pri)}
+.btn{background:var(--pri);color:#fff;padding:.6rem 1.2rem;border-radius:.6rem;font-weight:600;cursor:pointer;border:none}
+.btn:hover{opacity:.9} .btn2{background:var(--acc);color:#111;padding:.6rem 1.2rem;border-radius:.6rem;font-weight:600;cursor:pointer;border:none}
+.btn:disabled,.btn2:disabled{opacity:.45;cursor:not-allowed}
+input,select,textarea{border:1.5px solid #cbd5e1;border-radius:.55rem;padding:.55rem .7rem;width:100%;background:#fff;color:#0f172a}
+input[type=file]{padding:.45rem .6rem} input[type=range]{padding:0} input[type=checkbox],input[type=radio]{width:auto}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--pri);border-color:transparent}
+label{font-size:.83rem;font-weight:600;display:block;margin-bottom:.3rem}
+.card{background:#fff;border-radius:1rem;box-shadow:0 8px 30px rgba(15,23,42,.08);padding:1.4rem}
+article p{margin:.7rem 0;line-height:1.75;color:#334155}
+article h2{font-size:1.45rem;font-weight:800;margin:1.6rem 0 .4rem;color:#0f172a}
+.faq{background:#fff;border-radius:.7rem;padding:.9rem 1.1rem;margin:.55rem 0;box-shadow:0 2px 10px rgba(15,23,42,.05)}
+.faq summary{font-weight:700;cursor:pointer}
+table.dt{width:100%;border-collapse:collapse} table.dt th,table.dt td{border:1px solid #e2e8f0;padding:.45rem .6rem;text-align:left;font-size:.9rem}
+table.dt th{background:#f1f5f9}
+.drop{border:2px dashed #94a3b8;border-radius:.8rem;padding:1.1rem;text-align:center;background:#f8fafc}
+canvas.prev{max-width:100%;border:1px solid #e2e8f0;border-radius:.5rem;background:#fff}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GrayPage", "url": "https://graypage.fixoraa.tech/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free PDF grayscale converter. Turn colour PDFs into clean black-and-white documents that print cheaply and read clearly, with a contrast boost and size comparison."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does grayscale really save printing money?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A true grayscale file prints using only black toner or ink, which costs far less per page than colour \u2014 and avoids 'composite black', where colour cartridges are silently used to print dark pages."}}, {"@type": "Question", "name": "Will my charts still make sense without colour?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes \u2014 conversion uses luminance, so series with different brightness stay distinct. Check page one in the before/after preview; if two series share a brightness and differ only in hue, keep a colour copy for that document."}}, {"@type": "Question", "name": "What does the contrast boost do?", "acceptedAnswer": {"@type": "Answer", "text": "It stretches tones around mid-grey: light text gets darker, paper gets whiter. It is ideal for faded scans and photocopies, and unnecessary for clean digital originals."}}, {"@type": "Question", "name": "Is text selectable in the grayscale PDF?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 pages are faithful high-quality renders, so the copy is for printing and reading. Keep your colour original as the master for editing, copying text or searching."}}, {"@type": "Question", "name": "Which quality should I pick?", "acceptedAnswer": {"@type": "Answer", "text": "High for anything that will be printed; Standard for quick drafts and on-screen reading. High renders at a larger scale, taking a little longer on long documents."}}, {"@type": "Question", "name": "Is my document uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "Never. Rendering and conversion happen entirely in your browser; your file stays on your device."}}]}</script>
+</head>
+<body id="top">
+<header class="sticky top-0 z-40 shadow-md" style="background:#111827">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="#top" class="text-xl font-extrabold tracking-tight" style="color:#F9FAFB">◐ GrayPage</a>
+    <nav class="flex gap-5 text-sm font-semibold" style="color:#F9FAFB">
+      <a href="#top" class="hover:underline">Home</a>
+      <a href="https://fixoraa.tech" class="hover:underline">More Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pt-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <div class="origin-top scale-[0.44] sm:scale-100 shrink-0">
+        <script>
+          atOptions = { 'key' : '4e68ac77881c17fe128a46565d9a4e8c', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+        </script>
+        <script src="https://www.highrevenueformat.com/4e68ac77881c17fe128a46565d9a4e8c/invoke.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<main class="mx-auto max-w-6xl px-4 sm:px-6 py-8">
+  <div class="text-center mb-6">
+    <h1 class="text-3xl sm:text-4xl font-extrabold" style="color:#0f172a">Convert PDF to Grayscale — Save Ink, Print Clean</h1>
+    <p class="mt-2 text-slate-600 max-w-2xl mx-auto">Colour is expensive at the printer and distracting on the page. GrayPage converts your PDF to clean grayscale — every page re-rendered in black, white and honest greys — with an optional contrast boost for faded scans.</p>
+    <span class="inline-block mt-3 px-3 py-1 rounded-full text-xs font-bold text-white pri">✓ Unlimited Free Usage — No Signup, No Watermark</span>
+    <p class="mt-2 text-xs text-slate-500">🔒 100% private: your file is processed entirely in your browser and never uploaded to any server.</p>
+  </div>
+  <div class="grid md:grid-cols-5 gap-6">
+  <div class="card md:col-span-2 space-y-3">
+    <div class="drop"><label>Your PDF</label><input id="file" type="file" accept="application/pdf"></div>
+    <div><label><input type="checkbox" id="boost"> Contrast boost (helps faded scans &amp; light text)</label></div>
+    <div><label>Render quality</label><select id="qual"><option value="1.5">High (best for print)</option><option value="1">Standard</option></select></div>
+    <button class="btn w-full" id="go" onclick="run()">Convert to Grayscale</button>
+    <button class="btn2 w-full" id="dl" style="display:none">⬇ Download grayscale PDF</button>
+    <p id="status" class="text-sm font-semibold"></p>
+    <div class="grid grid-cols-2 gap-2 text-center text-sm"><div class="p-2 rounded-lg bg-slate-100"><b id="oB">–</b><br>original size</div><div class="p-2 rounded-lg bg-slate-100"><b id="oA">–</b><br>grayscale size</div></div>
+  </div>
+  <div class="card md:col-span-3">
+    <h3 class="font-bold mb-2">Before / after — page 1</h3>
+    <div class="grid grid-cols-2 gap-3"><canvas id="before" class="prev" width="300" height="390"></canvas><canvas id="after" class="prev" width="300" height="390"></canvas></div>
+  </div></div>
+</main>
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pb-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="464498"></script>
+    </div>
+  </div>
+</div>
+<section class="mx-auto max-w-4xl px-4 sm:px-6 pb-6">
+  <article>
+  <h2>Why grayscale is a printing superpower</h2>
+<p>Colour printing costs several times more per page than black-and-white, drains cartridges at the least convenient moment, and — the quiet scandal — many 'black' pages from colour documents are secretly printed with all four inks combined. A document converted to true grayscale prints on the black cartridge alone: cheaper, faster, and with text that is often crisper, because a single ink lays down a cleaner edge than four inks negotiating registration. For drafts, handouts, manuals and anything read once and filed, grayscale is not a compromise; it is the correct production format.</p>
+<p>GrayPage converts at the file level, which beats the printer dialog's 'print in grayscale' checkbox for one practical reason: the converted PDF is grayscale everywhere, forever. Email it to a colleague, print it at a shop, archive it for a decade — nobody's default settings can accidentally resurrect the colour and the colour bill. What you converted is what everyone gets.</p>
+<h2>How the conversion treats your pages</h2>
+<p>GrayPage renders each page and re-encodes it using the standard luminance weighting — the same formula your eyes effectively use, counting green most, red next, blue least — so colours that looked distinct stay distinguishable in grey. A red heading and a blue link, equally bright in colour, separate into different greys because their luminance genuinely differs. Photographs survive conversion with their tonal range intact; charts keep their series readable wherever the original designer respected brightness, not hue alone.</p>
+<p>The contrast boost is there for the real world's imperfect documents: faded scans, pale photocopies, pastel highlighting that threatens to vanish. It stretches the tonal range around mid-grey, darkening light text and cleaning paper white — the difference between a washed-out page and a legible one. The before/after preview of page one shows exactly what your settings will do, so boost becomes a decision you make with your eyes, not a gamble.</p>
+<h2>How to convert a PDF to grayscale, step by step</h2>
+<p>Load the file, decide on the contrast boost by thinking about the source — clean digital documents rarely need it; scans and photocopies usually benefit — and choose render quality: High for anything bound for paper, Standard for drafts and screens. Press Convert and watch the pages process; the first page's before/after pair appears as soon as it is ready, giving you an early verdict on the whole run.</p>
+<p>Compare the sizes when it finishes. Grayscale output is often smaller than a colour original laden with photographs, though the tool reports honestly either way. Download the copy — saved with a '-grayscale' name so the colour master is never overwritten — and print with confidence: your printer's colour cartridges are officially off duty for this document.</p>
+<h2>Where grayscale is the professional choice</h2>
+<p>Offices converting procedure manuals, price lists and internal reports for bulk printing save real money per copy, multiplied across every reprint. Teachers printing class sets avoid the colour budget conversation entirely. Legal and administrative workflows often prefer grayscale copies for files and exhibits, where colour carries no information and consistency matters. Book printers proof in grayscale to judge layout and typography without being seduced by colour — if a page works in grey, it works.</p>
+<p>There is also the accessibility angle: readers with certain colour-vision deficiencies find carefully converted grayscale documents more predictable than colour originals whose meaning hides in hue differences they cannot see. And archivists know that grayscale masters are smaller, simpler and remarkably durable — fewer channels, fewer surprises, decades of readability.</p>
+<h2>What grayscale conversion changes — honestly</h2>
+<p>Two honest consequences come with the render-based method, and both are signposted in the tool. First, the converted pages are high-quality images: text in the output is not selectable or searchable, because the page is now a faithful picture of itself. Keep the colour original as your master whenever you need text operations later. Second, information carried by colour alone — the red-versus-green status in a chart whose series share a brightness — can compress into similar greys; the preview exists precisely so you can catch that on page one rather than page forty.</p>
+<p>Neither consequence diminishes the tool's purpose. A grayscale copy is a production copy: made for printing, sharing and reading, while the original remains the editable source. Professionals have always worked this way — master in full fidelity, distribution copies fit for purpose. GrayPage simply makes the distribution copy in seconds, privately, on your own machine.</p>
+<h2>Privacy: dull colours, sensitive contents</h2>
+<p>Bulk-print documents are often internal documents — drafts, manuals, reports not yet released. GrayPage converts inside your browser tab; nothing is uploaded, and the pages exist only in your device's memory until you download the result. Pricing drafts and procedure manuals stay inside the building, which is where they were when you started.</p>
+<p>Local conversion also scales the way offices need: a two-hundred-page manual converts without an upload tier arguing about file size, and re-runs with different boost settings cost seconds. The cheapest page is the one printed in black only — and the safest conversion is the one that never left your desk.</p>
+<h2>Getting the most from black-and-white</h2>
+<p>Print a single test page and judge it under the light it will be read in; office fluorescents forgive less than your monitor does. If your document mixes text pages with a few colour-critical plates — a map, a medical image, a colour-coded chart — convert the text body and keep the plates as a separate colour appendix rather than forcing one format on both. For handouts, grayscale pairs beautifully with n-up stacking: convert first, then impose, and a long manual becomes a compact, cheap, readable pack. And set your printer's default to monochrome for the converted file's sake — a true grayscale PDF plus a colour-happy driver default can still spend colour ink on composite blacks in some setups; the file has done its half, so let the driver do its. Small habits like these compound across every reprint, every handout pack and every archived manual your organisation produces over the years ahead.</p>
+  <h2>Frequently Asked Questions</h2>
+  <details class="faq"><summary>Does grayscale really save printing money?</summary><p>Yes. A true grayscale file prints using only black toner or ink, which costs far less per page than colour — and avoids 'composite black', where colour cartridges are silently used to print dark pages.</p></details>
+<details class="faq"><summary>Will my charts still make sense without colour?</summary><p>Usually, yes — conversion uses luminance, so series with different brightness stay distinct. Check page one in the before/after preview; if two series share a brightness and differ only in hue, keep a colour copy for that document.</p></details>
+<details class="faq"><summary>What does the contrast boost do?</summary><p>It stretches tones around mid-grey: light text gets darker, paper gets whiter. It is ideal for faded scans and photocopies, and unnecessary for clean digital originals.</p></details>
+<details class="faq"><summary>Is text selectable in the grayscale PDF?</summary><p>No — pages are faithful high-quality renders, so the copy is for printing and reading. Keep your colour original as the master for editing, copying text or searching.</p></details>
+<details class="faq"><summary>Which quality should I pick?</summary><p>High for anything that will be printed; Standard for quick drafts and on-screen reading. High renders at a larger scale, taking a little longer on long documents.</p></details>
+<details class="faq"><summary>Is my document uploaded to a server?</summary><p>Never. Rendering and conversion happen entirely in your browser; your file stays on your device.</p></details>
+  </article>
+</section>
+<footer class="mt-6 py-8" style="background:#111827;color:#F9FAFB">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 text-center text-sm">
+    <p class="font-bold text-base">GrayPage</p>
+    <p class="opacity-80 mt-1">Free PDF grayscale converter. Turn colour PDFs into clean black-and-white documents that print cheaply and read clearly, with a contrast boost and size comparison.</p>
+    <p class="mt-2"><a href="#top" class="underline">Home</a> · <a href="https://fixoraa.tech" class="underline">More Tools</a></p>
+    <p class="fx-credit" style="text-align:center;font-size:12.5px;opacity:.62;margin:10px auto 2px;letter-spacing:.01em">Made by <a href="https://fixoraa.tech" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px">Fixoraa</a></p>
+  </div>
+</footer>
+<script>
+
+const $=id=>document.getElementById(id);
+function fmtBytes(b){if(b===0)return '0 B';const k=1024,s=['B','KB','MB','GB'];const i=Math.floor(Math.log(b)/Math.log(k));return (b/Math.pow(k,i)).toFixed(i?1:0)+' '+s[i];}
+function setStatus(m,ok){const el=$('status');if(!el)return;el.textContent=m;el.style.color=ok===false?'#dc2626':'inherit';}
+function download(bytes,name,type){const blob=bytes instanceof Blob?bytes:new Blob([bytes],{type:type||'application/pdf'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},800);}
+async function readFile(input){const f=input.files&&input.files[0];if(!f)throw new Error('Please choose a PDF file first.');return {file:f,buf:await f.arrayBuffer()};}
+function showDl(id,bytes,name){const b=$(id);b.style.display='inline-block';b.onclick=()=>download(bytes,name);}
+
+
+async function run(){
+  const btn=$('go'); btn.disabled=true;
+  try{
+    const {file,buf}=await readFile($('file'));
+    const src=await pdfjsLib.getDocument({data:buf.slice(0)}).promise;
+    const scale=parseFloat($('qual').value), boost=$('boost').checked;
+    const out=await PDFLib.PDFDocument.create();
+    for(let i=1;i<=src.numPages;i++){
+      const page=await src.getPage(i);
+      const vp=page.getViewport({scale:scale});
+      const cv=document.createElement('canvas'); cv.width=vp.width; cv.height=vp.height;
+      const ctx=cv.getContext('2d'); ctx.fillStyle='#fff'; ctx.fillRect(0,0,cv.width,cv.height);
+      await page.render({canvasContext:ctx,viewport:vp}).promise;
+      const id=ctx.getImageData(0,0,cv.width,cv.height); const d=id.data;
+      for(let k=0;k<d.length;k+=4){ let g=0.299*d[k]+0.587*d[k+1]+0.114*d[k+2]; if(boost){ g=Math.max(0,Math.min(255,(g-128)*1.25+128)); } d[k]=g; d[k+1]=g; d[k+2]=g; }
+      ctx.putImageData(id,0,0);
+      if(i===1){ const b=$('before'); const bp=await src.getPage(1); const bv=bp.getViewport({scale:0.9}); b.width=bv.width; b.height=bv.height; await bp.render({canvasContext:b.getContext('2d'),viewport:bv}).promise; const a=$('after'); a.width=cv.width>620?620:cv.width; a.height=a.width*cv.height/cv.width; a.getContext('2d').drawImage(cv,0,0,a.width,a.height); }
+      const jpg=await (await fetch(cv.toDataURL('image/jpeg',0.88))).arrayBuffer();
+      const img=await out.embedJpg(jpg);
+      const np=out.addPage([vp.width/scale,vp.height/scale]);
+      np.drawImage(img,{x:0,y:0,width:vp.width/scale,height:vp.height/scale});
+      setStatus('Converting page '+i+' of '+src.numPages+'…');
+    }
+    const bytes=await out.save();
+    $('oB').textContent=fmtBytes(file.size); $('oA').textContent=fmtBytes(bytes.length);
+    showDl('dl',bytes,file.name.replace(/\.pdf$/i,'')+'-grayscale.pdf');
+    setStatus('Done ✔ Grayscale copy ready — '+src.numPages+' pages. Pages are faithful renders, so text in the copy is not selectable; keep your colour original as the master.');
+  }catch(e){ setStatus('⚠ '+(e.message||e),false); }
+  btn.disabled=false;
+}
+
+</script>
+</body>
+</html>
